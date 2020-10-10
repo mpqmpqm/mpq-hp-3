@@ -1,0 +1,82 @@
+.container {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr min(var(--max-paragraph-width), 100%) 0.25fr;
+  margin: calc(var(--vert-spacer) * 4) 0;
+  --grid-center: 2;
+  --padding-indent: 0.5rem;
+  --vert-spacer: 0.8rem;
+}
+
+@media print {
+  .container {
+    font-size: 12pt;
+    display: block;
+    margin: 7.5mm;
+  }
+}
+
+.container > * {
+  grid-column: var(--grid-center);
+}
+
+.container h1,
+.container p:first-of-type {
+  text-align: right;
+  margin-top: 0;
+}
+
+.container h1 {
+  font-size: 1.5em;
+}
+
+.container h2 {
+  font-size: 1.25em;
+  padding: 0 0 calc(var(--vert-spacer) * 0.5) var(--padding-indent);
+  margin-top: calc(var(--vert-spacer) * 1.5);
+  border-bottom: 0.5px solid black;
+  font-style: italic;
+}
+
+.container p + h2 {
+  margin-top: calc(var(--vert-spacer) * 2);
+}
+
+.container h3,
+.container p {
+  padding-left: var(--padding-indent);
+}
+
+.container h3 {
+  font-size: 1.35em;
+  margin-top: calc(var(--vert-spacer) * 2);
+  line-height: 1.15;
+}
+
+.container h2 + h3 {
+  margin-top: calc(var(--vert-spacer) * 1);
+}
+
+.container h3 + p {
+  margin-top: calc(var(--vert-spacer) * 0.5);
+}
+
+.container ul {
+  padding-inline-start: 4ch;
+  margin-top: calc(var(--vert-spacer) * 0.75);
+}
+
+.container p {
+  font-size: 1em;
+  margin-top: var(--vert-spacer);
+  line-height: 1.3;
+}
+
+.container code {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+.container h3 + ul {
+  column-count: 3;
+}
