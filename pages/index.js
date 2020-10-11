@@ -1,16 +1,21 @@
 import Head from "next/head"
-import LandingNav from "../components/pages/index/LandingNav"
-import { routes } from "../components/PageNav"
+import PageNav from "../components/PageNav"
+import Index from "../components/pages/index/Index"
+import { fetchGithubMarkdown } from "../utils/fetchGithubMarkdown"
 
-export default function Home() {
+export default function Home({ md }) {
   return (
     <>
       <Head>
         <title>MPQ</title>
       </Head>
-      <main>
-        <LandingNav routes={routes.filter(({ href }) => href !== `/`)} />
-      </main>
+      <PageNav />
+      <Index {...{ md }} />
     </>
   )
+}
+export async function getServerSideProps() {
+  return {
+    props: { ...(await fetchGithubMarkdown({ file: `About.md` })) },
+  }
 }
