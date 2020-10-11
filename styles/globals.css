@@ -1,22 +1,15 @@
 :root {
   font-size: 14pt;
   --max-paragraph-width: 60ch;
+
+  --bright-purple: #6500ff;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: allotrope, serif;
-  /* font-family: aesthet-nova, sans-serif; */
-  /* font-family: ibm-plex-sans, serif; */
-  font-family: freight-text-pro, sans-serif;
-  /* font-family: din-2014, serif; */
-  /* font-family: neue-haas-unica, serif; */
-  font-weight: 400;
-}
-
-main {
-  /* max-width: var(--max-paragraph-width); */
-  margin: 0 auto;
+  font-family: freight-text-pro, serif;
+  font-family: neue-haas-unica, sans-serif;
+  font-weight: 300;
 }

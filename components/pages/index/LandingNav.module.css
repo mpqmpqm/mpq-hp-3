@@ -1,0 +1,20 @@
+.listItem {
+  display: flex;
+}
+
+.anchor {
+  color: red;
+  font-size: 30vh;
+  font-family: neue-haas-unica, serif;
+  text-decoration: none;
+  line-height: 0.9;
+  overflow: hidden;
+  display: block;
+  font-weight: 300;
+  letter-spacing: -0.075ch;
+}
+
+.anchor:hover,
+.anchor:active {
+  color: blue;
+}

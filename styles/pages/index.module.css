@@ -1,0 +1,13 @@
+.link {
+  color: red;
+  font-size: 30vh;
+  font-family: ivypresto-display, sans-serif;
+  text-decoration: none;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.link:hover,
+.link:active {
+  color: blue;
+}
