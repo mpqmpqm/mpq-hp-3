@@ -1,12 +1,9 @@
 import styles from "./Resume.module.css"
 
-const Resume = ({ html }) => {
+const Resume = ({ children }) => {
   return (
     <>
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-        className={styles.container}
-      />
+      <main className={styles.container}>{children}</main>
       <style global jsx>
         {`
           h3 + p.dates {
