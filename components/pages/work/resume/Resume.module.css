@@ -28,11 +28,13 @@
 
 .container h1 {
   font-size: 1.5em;
+  padding: 0 var(--padding-indent);
 }
 
 .container h2 {
   font-size: 1em;
-  padding: 0 0 calc(var(--vert-spacer) * 0.5) var(--padding-indent);
+  padding: 0 var(--padding-indent) calc(var(--vert-spacer) * 0.5)
+    var(--padding-indent);
   margin-top: calc(var(--vert-spacer) * 1.5);
   border-bottom: 1px solid var(--bright-purple);
   border-bottom: 1px solid black;
@@ -46,7 +48,7 @@
 
 .container h3,
 .container p {
-  padding-left: var(--padding-indent);
+  padding: 0 var(--padding-indent);
 }
 
 .container h3 {
@@ -67,6 +69,7 @@
 .container ul {
   padding-inline-start: 4ch;
   margin-top: calc(var(--vert-spacer) * 0.75);
+  padding-right: var(--padding-indent);
 }
 
 .container p {

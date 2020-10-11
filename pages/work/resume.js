@@ -2,14 +2,17 @@ import showdown from "showdown"
 import { Octokit } from "@octokit/core"
 import Resume from "../../components/pages/work/resume/Resume"
 import styles from "../../styles/pages/resume.module.css"
+import Layout from "../../components/Layout"
 
 const resume = ({ markdown }) => {
   const converter = new showdown.Converter()
   const html = converter.makeHtml(markdown)
   return (
-    <main className={styles.page}>
-      <Resume {...{ html }} />
-    </main>
+    <Layout>
+      <main className={styles.page}>
+        <Resume {...{ html }} />
+      </main>
+    </Layout>
   )
 }
 
