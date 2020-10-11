@@ -1,0 +1,42 @@
+.nav {
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--bright-purple);
+  background-color: ghostwhite;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  list-style-type: none;
+  padding: 0.1em 1em 0.3em;
+}
+
+.anchor {
+  text-decoration: none;
+  color: var(--bright-purple);
+}
+
+.active {
+  background-color: var(--bright-purple);
+  animation: active 0.4s;
+}
+
+.active .anchor {
+  color: white;
+}
+
+@keyframes active {
+  0% {
+    background-color: ghostwhite;
+  }
+
+  100% {
+    background-color: var(--bright-purple);
+  }
+}
