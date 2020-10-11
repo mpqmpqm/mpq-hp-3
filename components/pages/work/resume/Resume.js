@@ -11,7 +11,6 @@ const Resume = ({ html }) => {
         {`
           h3 + p.dates {
             margin-top: 0;
-            font-style: italic;
           }
         `}
       </style>

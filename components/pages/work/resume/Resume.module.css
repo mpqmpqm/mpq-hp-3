@@ -1,16 +1,16 @@
 .container {
   font-size: 1rem;
   display: grid;
-  grid-template-columns: 0.5fr min(var(--max-paragraph-width), 100%) 0.25fr;
+  grid-template-columns: 0.4fr 0.1fr min(var(--max-paragraph-width), 100%) 0.1fr 0.4fr;
   margin: calc(var(--vert-spacer) * 4) 0;
-  --grid-center: 2;
+  --grid-center: 3;
   --padding-indent: 0.5rem;
   --vert-spacer: 0.8rem;
 }
 
 @media print {
   .container {
-    font-size: 12pt;
+    font-size: 10pt;
     display: block;
     margin: 7.5mm;
   }
@@ -31,11 +31,13 @@
 }
 
 .container h2 {
-  font-size: 1.25em;
+  font-size: 1em;
   padding: 0 0 calc(var(--vert-spacer) * 0.5) var(--padding-indent);
   margin-top: calc(var(--vert-spacer) * 1.5);
-  border-bottom: 0.5px solid black;
-  font-style: italic;
+  border-bottom: 1px solid var(--bright-purple);
+  border-bottom: 1px solid black;
+  font-weight: 600;
+  /* font-style: italic; */
 }
 
 .container p + h2 {
@@ -48,9 +50,10 @@
 }
 
 .container h3 {
-  font-size: 1.35em;
+  font-size: 1.3em;
   margin-top: calc(var(--vert-spacer) * 2);
   line-height: 1.15;
+  font-weight: 500;
 }
 
 .container h2 + h3 {
@@ -79,4 +82,31 @@
 
 .container h3 + ul {
   column-count: 3;
+}
+
+.container em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.container a {
+  color: var(--bright-purple);
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.container p:first-of-type a {
+  color: black;
+  /* text-decoration: none; */
+}
+
+.container p:first-of-type a:hover {
+  color: var(--bright-purple);
+}
+
+.container li::marker {
+  font-size: 0.9em;
 }
