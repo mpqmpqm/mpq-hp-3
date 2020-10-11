@@ -15,7 +15,7 @@ const resume = ({ markdown }) => {
 
 export default resume
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const octokit = new Octokit({ auth: process.env.GITHUB_KEY })
 
   const res = await octokit.request(
