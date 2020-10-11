@@ -1,8 +1,15 @@
 :root {
   font-size: 14pt;
   --max-paragraph-width: 60ch;
+  --vert-spacer: 0.8rem;
 
   --bright-purple: #6500ff;
+
+  --background-color: ghostwhite;
+  --background-color: white;
+
+  --page-columns: 0.2fr 0.1fr min(var(--max-paragraph-width), 100%) 0.2fr 0.5fr;
+  --grid-center: 3;
 }
 
 * {
@@ -15,5 +22,38 @@
 }
 
 body {
-  background-color: ghostwhite;
+  background-color: var(--background-color);
+}
+
+p {
+  font-size: 1em;
+  margin-top: var(--vert-spacer);
+  line-height: 1.3;
+}
+
+a {
+  color: var(--bright-purple);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: var(--page-columns);
+  --grid-center: 3;
+  --vert-spacer: 0.8rem;
+  margin: calc(var(--vert-spacer) * 2) 0;
+}
+
+main > * {
+  grid-column: var(--grid-center);
+}
+
+video {
+  width: 100%;
+  grid-column: 2 / 5;
 }
