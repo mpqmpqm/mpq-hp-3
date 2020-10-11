@@ -10,39 +10,52 @@ export const routes = [
   },
   {
     href: `/work`,
-    text: `Work`,
+    text: `Portfolio`,
   },
   {
-    href: `/work/resume`,
+    href: `/resume`,
     text: `Resume`,
-  },
-  {
-    href: `/about`,
-    text: "About Moi",
   },
 ]
 
-const PageNavLink = ({ active, href, text }) => {
+const portfolioRoutes = {
+  "fac-mem": "Faculty and Members",
+}
+
+const PageNavLink = ({ active, href, text, path }) => {
   return (
     <li className={active ? styles.active : null}>
       <Link href={href}>
         <a className={`${styles.anchor}`}>{text}</a>
       </Link>
+      {path && ` / ${path}`}
     </li>
   )
 }
 
 const PageNav = () => {
   const router = useRouter()
-  const { pathname } = router
+  const { pathname, asPath } = router
+
+  console.log(router)
+
+  const portfolioSubroute = asPath.includes(`/work/`)
+    ? asPath.replace(`/work/`, ``)
+    : null
 
   return (
     <nav className={styles.nav}>
       <ul>
         {routes.map(({ href, text }) => (
           <PageNavLink
-            {...{ href, text }}
-            active={href === pathname}
+            href={href}
+            text={text}
+            path={
+              text === `Portfolio` && portfolioSubroute
+                ? `${portfolioRoutes[portfolioSubroute]}`
+                : null
+            }
+            active={href === `/` ? href === pathname : pathname.includes(href)}
             key={href}
           />
         ))}

@@ -3,18 +3,22 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid var(--bright-purple);
-  background-color: ghostwhite;
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-columns: var(--page-columns);
 }
 
 .nav ul {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
+  grid-column: var(--grid-center);
 }
 
 .nav li {
   list-style-type: none;
   padding: 0.1em 1em 0.3em;
+  color: white;
 }
 
 .anchor {
