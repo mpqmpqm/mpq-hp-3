@@ -51,6 +51,4 @@ export const fetchGithubLinks = async ({ repo, path, pathsOnly }) => {
   }))
 
   return titles
-  // console.log(files)
-  // return `hi`
 }

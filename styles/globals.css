@@ -4,6 +4,7 @@
   --vert-spacer: 0.8rem;
 
   --bright-purple: #6500ff;
+  --select-purple: rgba(102, 0, 255, 0.2);
 
   --background-color: ghostwhite;
   --background-color: white;
@@ -57,3 +58,10 @@ video {
   width: 100%;
   grid-column: 2 / 5;
 }
+
+/* ::selection {
+  color: white;
+  background: var(--bright-purple);
+  color: black;
+  background: var(--select-purple);
+} */

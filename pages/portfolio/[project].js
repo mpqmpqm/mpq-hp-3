@@ -1,11 +1,17 @@
 import { fetchGithubLinks, fetchGithubMarkdown } from "../../utils/fetchGithub"
 import { markdownToReact } from "../../utils/markdownToReact"
 import Layout from "../../components/Layout"
+import Link from "next/link"
 
 const project = ({ content, title }) => {
   return (
     <Layout subPath={title}>
-      <main>{markdownToReact({ content })}</main>
+      <main>
+        <Link href="/portfolio">
+          <a>&larr; Portfolio</a>
+        </Link>
+        {markdownToReact({ content })}
+      </main>
     </Layout>
   )
 }

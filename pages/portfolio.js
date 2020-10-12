@@ -3,7 +3,6 @@ import Link from "next/link"
 import { fetchGithubLinks } from "../utils/fetchGithub"
 
 const portfolio = ({ links }) => {
-  console.log(links)
   return (
     <Layout>
       <main>
