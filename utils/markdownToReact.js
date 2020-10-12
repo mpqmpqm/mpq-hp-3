@@ -6,7 +6,7 @@ import markdown from "remark-parse"
 import remark2rehype from "remark-rehype"
 import unified from "unified"
 
-export const markdownToReact = ({ md }) =>
+export const markdownToReact = ({ content }) =>
   unified()
     .use(markdown)
     .use(remark2rehype, { allowDangerousHtml: true })
@@ -30,4 +30,4 @@ export const markdownToReact = ({ md }) =>
       },
       passNode: true,
     })
-    .processSync(md).result
+    .processSync(content).result

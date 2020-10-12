@@ -1,21 +1,28 @@
 import Head from "next/head"
 import PageNav from "../components/PageNav"
 import Index from "../components/pages/index/Index"
-import { fetchGithubMarkdown } from "../utils/fetchGithubMarkdown"
+import { fetchGithubMarkdown } from "../utils/fetchGithub"
 
-export default function Home({ md }) {
+export default function Home({ content }) {
   return (
     <>
       <Head>
         <title>MPQ</title>
       </Head>
       <PageNav />
-      <Index {...{ md }} />
+      <Index {...{ content }} />
     </>
   )
 }
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const { content } = await fetchGithubMarkdown({
+    repo: `resume`,
+    path: `About.md`,
+  })
+
   return {
-    props: { ...(await fetchGithubMarkdown({ file: `About.md` })) },
+    props: {
+      content,
+    },
   }
 }

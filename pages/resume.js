@@ -1,20 +1,26 @@
 import Layout from "../components/Layout"
 import Resume from "../components/pages/work/resume/Resume"
 import { markdownToReact } from "../utils/markdownToReact"
-import { fetchGithubMarkdown } from "../utils/fetchGithubMarkdown"
+import { fetchGithubMarkdown } from "../utils/fetchGithub"
 
-const resume = ({ md }) => {
+const resume = ({ content }) => {
   return (
     <Layout>
-      <Resume>{markdownToReact({ md })}</Resume>
+      <Resume>{markdownToReact({ content })}</Resume>
     </Layout>
   )
 }
 
 export default resume
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  const { content } = await fetchGithubMarkdown({
+    repo: `resume`,
+    path: `Resume.md`,
+  })
   return {
-    props: { ...(await fetchGithubMarkdown({ file: `Resume.md` })) },
+    props: {
+      content,
+    },
   }
 }
