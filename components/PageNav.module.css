@@ -28,7 +28,7 @@
 
 .active {
   background-color: var(--bright-purple);
-  animation: active 0.4s;
+  /* animation: active 0.4s; */
 }
 
 .active .anchor {

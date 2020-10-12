@@ -1,9 +1,9 @@
 const { default: PageNav } = require("./PageNav")
 
-const Layout = ({ children }) => {
+const Layout = ({ children, subPath }) => {
   return (
     <>
-      <PageNav />
+      <PageNav {...{ subPath }} />
       {children}
     </>
   )
