@@ -19,23 +19,26 @@ export const routes = [
 ]
 
 const PageNavLink = ({ active, href, text, subPath }) => {
+  const portfolioSubPath = href === `/portfolio` && subPath
   return (
     <li className={active ? styles.active : null}>
       <Link href={href}>
-        <a className={`${styles.anchor}`}>{text}</a>
+        <a className={`${styles.anchor}`}>
+          {portfolioSubPath && <span>&larr;</span>}
+          {text}
+        </a>
       </Link>
-      {href === `/portfolio` && subPath && ` / ${subPath}`}
+      {portfolioSubPath && ` / ${subPath}`}
     </li>
   )
 }
 
 const PageNav = ({ subPath }) => {
   const router = useRouter()
-  const { pathname, asPath } = router
+  const { pathname } = router
 
-  const portfolioSubroute = asPath.includes(`/work/`)
-    ? asPath.replace(`/work/`, ``)
-    : null
+  const isActive = (href) =>
+    href === `/` ? href === pathname : pathname.includes(href)
 
   return (
     <nav className={styles.nav}>
@@ -45,7 +48,7 @@ const PageNav = ({ subPath }) => {
             href={href}
             text={text}
             subPath={subPath}
-            active={href === `/` ? href === pathname : pathname.includes(href)}
+            active={isActive(href)}
             key={href}
           />
         ))}
