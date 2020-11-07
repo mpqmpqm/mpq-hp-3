@@ -25,7 +25,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: freight-text-pro, serif;
   font-family: neue-haas-unica, sans-serif;
   font-weight: 300;
 }
@@ -41,10 +40,24 @@ main {
   /* --grid-center: 3; */
   --vert-spacer: 0.8rem;
   margin: calc(var(--vert-spacer) * 2) 0;
+  /* animation: rise 0.2s ease-out; */
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 main > * {
   grid-column: var(--grid-center);
+}
+
+main h1 {
+  margin-bottom: var(--vert-spacer);
 }
 
 main p {

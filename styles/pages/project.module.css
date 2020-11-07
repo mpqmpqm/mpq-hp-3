@@ -1,17 +1,8 @@
-.main h1 {
-  /* margin-top: calc(var(--vert-spacer) * 1); */
-}
-
 .main code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
   white-space: nowrap;
   font-size: 0.9em;
-}
-
-.main code::before,
-.main code::after {
-  /* content: "`"; */
 }
 
 .main aside[class*="media"] {
