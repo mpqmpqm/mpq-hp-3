@@ -38,13 +38,12 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      ...(await fetchGithubLinks({
-        repo: `resume`,
-        path: `portfolio`,
-        pathsOnly: true,
-      })),
-    ],
+    paths: await fetchGithubLinks({
+      repo: `resume`,
+      path: `portfolio`,
+      pathsOnly: true,
+    }),
+
     fallback: false,
   }
 }
