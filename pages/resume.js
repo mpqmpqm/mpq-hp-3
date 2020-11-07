@@ -5,9 +5,24 @@ import { fetchGithubMarkdown } from "../utils/fetchGithub"
 
 const resume = ({ content }) => {
   return (
-    <Layout>
-      <Resume>{markdownToReact({ content })}</Resume>
-    </Layout>
+    <>
+      <Layout>
+        <Resume>{markdownToReact({ content })}</Resume>
+      </Layout>
+      <style global jsx>
+        {`
+          @media print {
+            body {
+              background-color: white;
+            }
+
+            nav {
+              display: none !important;
+            }
+          }
+        `}
+      </style>
+    </>
   )
 }
 
