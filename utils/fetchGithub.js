@@ -44,11 +44,20 @@ export const fetchGithubLinks = async ({ repo, path, pathsOnly }) => {
     }))
   )
 
-  const titles = files.map(({ path, file: { content, data: { title } } }) => ({
-    path,
-    title,
-    content,
-  }))
+  const titles = files.map(
+    ({
+      path,
+      file: {
+        content,
+        data: { title, tags },
+      },
+    }) => ({
+      path,
+      title,
+      tags: tags || null,
+      content,
+    })
+  )
 
   return titles
 }

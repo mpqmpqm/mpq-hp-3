@@ -1,0 +1,10 @@
+.h1 {
+  margin-bottom: var(--vert-spacer);
+}
+
+.project {
+}
+
+.tags {
+  font-size: 0.95em;
+}
