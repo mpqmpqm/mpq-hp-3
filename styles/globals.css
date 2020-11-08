@@ -2,7 +2,7 @@
   font-size: 14pt;
   --max-paragraph-width: 60ch;
   --vert-spacer: 0.8rem;
-  --content-margin: var(--vert-spacer);
+  --content-margin: 5vh;
 
   --bright-purple: #6500ff;
   --select-purple: rgba(102, 0, 255, 0.2);
@@ -42,16 +42,6 @@ main {
   /* --grid-center: 3; */
   --vert-spacer: 0.8rem;
   margin: var(--content-margin) 0;
-  /* animation: rise 0.2s ease-out; */
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(40px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 main > * {
