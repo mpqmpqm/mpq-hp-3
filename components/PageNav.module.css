@@ -7,6 +7,7 @@
   border-top: 1px solid var(--bright-purple);
   display: grid;
   grid-template-columns: var(--page-columns);
+  background-color: var(--background-color);
 }
 
 .nav ul {
