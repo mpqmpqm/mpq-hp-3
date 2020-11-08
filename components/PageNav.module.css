@@ -12,13 +12,24 @@
   display: flex;
   /* justify-content: space-between; */
   flex-wrap: wrap;
-  grid-column: var(--grid-center);
+  grid-column: 1 / -1;
+  flex-direction: column;
 }
 
 .nav li {
   list-style-type: none;
   padding: 0.1em 1em 0.3em;
   color: white;
+}
+
+@media (min-width: 699px) {
+  .nav ul {
+    grid-column: var(--grid-center);
+    flex-direction: row;
+  }
+  .nav li:first-child {
+    margin-left: -0.95em;
+  }
 }
 
 .anchor {
