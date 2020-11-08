@@ -1,5 +1,5 @@
 import Head from "next/head"
-import PageNav from "../components/PageNav"
+import Layout from "../components/Layout"
 import Index from "../components/pages/index/Index"
 import { fetchGithubMarkdown } from "../utils/fetchGithub"
 
@@ -9,8 +9,10 @@ export default function Home({ content }) {
       <Head>
         <title>MPQ | Home</title>
       </Head>
-      <PageNav />
-      <Index {...{ content }} />
+
+      <Layout>
+        <Index {...{ content }} />
+      </Layout>
     </>
   )
 }
