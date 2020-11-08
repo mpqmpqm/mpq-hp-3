@@ -10,7 +10,7 @@ const useFixedNav = () => {
       if (!media.matches) {
         const nav = document.querySelector(`nav`)
         const { height } = nav.getBoundingClientRect()
-        setMenuHeight(height * 1.25)
+        setMenuHeight(height * 1.5)
       } else setMenuHeight(0)
     }
 
