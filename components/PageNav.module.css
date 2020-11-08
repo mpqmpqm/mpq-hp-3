@@ -1,8 +1,10 @@
 .nav {
   font-size: 1rem;
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid var(--bright-purple);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--bright-purple);
   background-color: var(--background-color);
   display: grid;
   grid-template-columns: var(--page-columns);
@@ -20,13 +22,22 @@
   list-style-type: none;
   padding: 0.1em 1em 0.3em;
   color: white;
+  text-align: right;
 }
 
 @media (min-width: 699px) {
+  .nav {
+    position: sticky;
+    top: 0;
+    border-top: none;
+    border-bottom: 1px solid var(--bright-purple);
+  }
+
   .nav ul {
     grid-column: var(--grid-center);
     flex-direction: row;
   }
+
   .nav li:first-child {
     margin-left: -0.95em;
   }
