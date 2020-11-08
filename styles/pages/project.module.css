@@ -1,5 +1,5 @@
 .main aside[class*="media"] {
-  grid-column: 2 / 5;
+  grid-column: var(--grid-breakout);
   margin: calc(var(--vert-spacer) * 2) 0;
 }
 
