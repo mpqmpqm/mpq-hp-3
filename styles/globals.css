@@ -2,11 +2,12 @@
   font-size: 14pt;
   --max-paragraph-width: 60ch;
   --vert-spacer: 0.8rem;
+  --content-margin: var(--vert-spacer);
 
   --bright-purple: #6500ff;
   --select-purple: rgba(102, 0, 255, 0.2);
 
-  --background-color: ghostwhite;
+  --nav-background-color: ghostwhite;
   --background-color: white;
 
   --page-columns: 0.5fr min(var(--max-paragraph-width), 94%) 0.5fr;
@@ -15,6 +16,7 @@
 
 @media (min-width: 699px) {
   :root {
+    --content-margin: calc(var(--vert-spacer) * 2);
     --page-columns: 0.2fr 0.1fr min(var(--max-paragraph-width), 100%) 0.2fr
       0.5fr;
     --grid-center: 3;
@@ -39,7 +41,7 @@ main {
   grid-template-columns: var(--page-columns);
   /* --grid-center: 3; */
   --vert-spacer: 0.8rem;
-  margin: calc(var(--vert-spacer) * 2) 0;
+  margin: var(--content-margin) 0;
   /* animation: rise 0.2s ease-out; */
 }
 
@@ -58,6 +60,8 @@ main > * {
 
 main h1 {
   margin-bottom: var(--vert-spacer);
+  margin-left: -2px;
+  line-height: 1.2;
 }
 
 main p {
