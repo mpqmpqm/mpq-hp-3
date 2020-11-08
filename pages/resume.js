@@ -2,10 +2,14 @@ import Layout from "../components/Layout"
 import Resume from "../components/pages/work/resume/Resume"
 import { markdownToReact } from "../utils/markdownToReact"
 import { fetchGithubMarkdown } from "../utils/fetchGithub"
+import Head from "next/head"
 
 const resume = ({ content }) => {
   return (
     <>
+      <Head>
+        <title>MPQ | Résumé</title>
+      </Head>
       <Layout>
         <Resume>{markdownToReact({ content })}</Resume>
       </Layout>

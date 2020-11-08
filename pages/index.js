@@ -7,7 +7,7 @@ export default function Home({ content }) {
   return (
     <>
       <Head>
-        <title>MPQ</title>
+        <title>MPQ | Home</title>
       </Head>
       <PageNav />
       <Index {...{ content }} />

@@ -3,26 +3,32 @@ import Link from "next/link"
 import styles from "../styles/pages/portfolio.module.css"
 import { fetchGithubMarkdown, fetchGithubLinks } from "../utils/fetchGithub"
 import { markdownToReact } from "../utils/markdownToReact"
+import Head from "next/head"
 
 const portfolio = ({ content, links }) => {
   return (
-    <Layout>
-      <main>
-        {markdownToReact({ content })}
-        {links.map(({ path, title, tags }) => (
-          <div className={styles.project} key={path}>
-            <h2 className={styles.title}>
-              <Link href={`/${path}`}>
-                <a>{title}</a>
-              </Link>
-            </h2>
-            <p className={styles.tags}>
-              <i>Tags:</i> {tags}
-            </p>
-          </div>
-        ))}
-      </main>
-    </Layout>
+    <>
+      <Head>
+        <title>MPQ | Work</title>
+      </Head>
+      <Layout>
+        <main>
+          {markdownToReact({ content })}
+          {links.map(({ path, title, tags }) => (
+            <div className={styles.project} key={path}>
+              <h2 className={styles.title}>
+                <Link href={`/${path}`}>
+                  <a>{title}</a>
+                </Link>
+              </h2>
+              <p className={styles.tags}>
+                <i>Tags:</i> {tags}
+              </p>
+            </div>
+          ))}
+        </main>
+      </Layout>
+    </>
   )
 }
 
