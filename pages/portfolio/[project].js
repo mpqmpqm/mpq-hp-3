@@ -1,7 +1,6 @@
 import { fetchGithubLinks, fetchGithubMarkdown } from "../../utils/fetchGithub"
 import { markdownToReact } from "../../utils/markdownToReact"
 import Layout from "../../components/Layout"
-import Link from "next/link"
 import styles from "../../styles/pages/project.module.css"
 import Head from "next/head"
 
@@ -12,12 +11,7 @@ const project = ({ content, title }) => {
         <title>MPQ | {title}</title>
       </Head>
       <Layout subPath={title}>
-        <main className={styles.main}>
-          {/* <Link href="/portfolio">
-          <a>&larr; Portfolio</a>
-        </Link> */}
-          {markdownToReact({ content })}
-        </main>
+        <main className={styles.main}>{markdownToReact({ content })}</main>
       </Layout>
     </>
   )
