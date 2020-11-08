@@ -14,7 +14,7 @@ export const routes = [
   },
   {
     href: `/resume`,
-    text: `Resume`,
+    text: `Résumé`,
   },
 ]
 
