@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: var(--page-columns);
   background-color: var(--background-color);
+  z-index: 99;
 }
 
 .nav ul {
