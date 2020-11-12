@@ -63,25 +63,25 @@
 
 .container p[class="dates"] + h4,
 .container p[class="dates"] + h4 + p[class="dates"] {
-  font-size: 0.975em;
+  font-size: 1em;
   /* color: #1f1f1f; */
 }
 
 .container p[class="dates"] + h4 + p[class="dates"] {
-  font-size: 0.85em;
+  font-size: 0.875em;
 }
 
 /* First item */
 .container h3 + p[class="dates"] + h4 {
-  font-size: 1.15em;
+  /* font-size: 1.1em; */
   margin-top: calc(var(--vert-spacer) * 0.85);
   font-weight: 500;
   color: black;
 }
 
-.container h3 + p[class="dates"] + h4 + p[class="dates"] {
+/* .container h3 + p[class="dates"] + h4 + p[class="dates"] {
   font-size: 1em;
-}
+} */
 .container h4 em {
   /* font-size: 0.75em; */
   font-weight: 300;
