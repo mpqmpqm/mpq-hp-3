@@ -1,9 +1,6 @@
 .container {
   font-size: 1rem;
   display: grid;
-  /* grid-template-columns: 0.4fr 0.1fr min(var(--max-paragraph-width), 100%) 0.1fr 0.4fr; */
-  /* margin: calc(var(--vert-spacer) * 4) 0; */
-  /* --grid-center: 3; */
   --padding-indent: 0.5rem;
 }
 
@@ -172,10 +169,4 @@
 
 .container p[class="dates"] {
   font-size: 0.95em;
-}
-
-.container h4,
-.container h4 + p[class="dates"] {
-  /* color: hsla(0, 0%, 0%, 0.95); */
-  /* padding-left: calc(var(--padding-indent) * 2); */
 }
