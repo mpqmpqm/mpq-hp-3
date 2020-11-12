@@ -45,7 +45,7 @@
 }
 
 .container h3 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   margin-top: calc(var(--vert-spacer) * 2);
   line-height: 1.15;
   font-weight: 500;
