@@ -102,6 +102,12 @@ aside.media p {
   margin-bottom: 0;
 }
 
+@media (max-width: 699px) {
+  aside.media.bleed p {
+    padding: 0 4%;
+  }
+}
+
 aside.media + p {
   margin-top: var(--vert-spacer);
 }
