@@ -15,8 +15,7 @@
   display: grid;
   background-color: var(--bright-purple);
   grid-column: 1 / -1;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "one two three";
   grid-gap: 1px;
   gap: 1px;
 }
@@ -25,8 +24,40 @@
   list-style-type: none;
   color: white;
   text-align: center;
-  padding: 1vh 2vh 1.25vh;
   background-color: var(--background-color);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.nav .projectPage {
+  grid-template-areas:
+    "top top"
+    "left right";
+}
+
+.projectPage li[name="/portfolio"] {
+  grid-area: top;
+}
+
+.projectPage li[name="/portfolio"] .anchor {
+  display: inline-block;
+  padding-right: 0;
+}
+
+.anchor {
+  text-decoration: none;
+  color: var(--bright-purple);
+  font-weight: 500;
+  padding: 1.25vh 2vh 1.5vh;
+  display: block;
+}
+
+.nav .active {
+  background-color: var(--bright-purple);
+}
+
+.active .anchor {
+  color: white;
 }
 
 @media (min-width: 699px) {
@@ -46,24 +77,18 @@
 
   .nav li {
     padding: 0.1em 1em 0.3em;
+    font-size: 1em;
+    font-weight: 300;
   }
 
   .nav li:first-child {
     margin-left: -0.95em;
   }
-}
 
-.anchor {
-  text-decoration: none;
-  color: var(--bright-purple);
-}
-
-.nav .active {
-  background-color: var(--bright-purple);
-  grid-row: 1;
-  grid-column: 1 / -1;
-}
-
-.active .anchor {
-  color: white;
+  .anchor {
+    text-decoration: none;
+    color: var(--bright-purple);
+    font-weight: 300;
+    padding: 0;
+  }
 }
