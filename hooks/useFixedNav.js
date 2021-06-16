@@ -4,7 +4,7 @@ const useFixedNav = () => {
   const [menuHeight, setMenuHeight] = useState(0)
 
   useEffect(() => {
-    const media = window.matchMedia(`(min-width: 699px)`)
+    const media = window.matchMedia(`(min-width: 700px)`)
 
     const listener = () => {
       if (!media.matches) {

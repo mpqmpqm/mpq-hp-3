@@ -16,7 +16,7 @@
   --grid-bleed: 1 / -1;
 }
 
-@media (min-width: 699px) {
+@media (min-width: 700px) {
   :root {
     --content-margin: calc(var(--vert-spacer) * 2);
 
@@ -100,7 +100,6 @@ aside.media p {
   margin-top: 0.5em;
   font-weight: 500;
   margin-bottom: 0;
-  padding: 0 4%;
 }
 
 aside.media + p {

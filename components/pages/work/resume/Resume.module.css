@@ -117,7 +117,7 @@
   line-height: 1.3;
 }
 
-@media (min-width: 699px) {
+@media (min-width: 700px) {
   .container h3 + ul {
     column-count: 3;
   }
