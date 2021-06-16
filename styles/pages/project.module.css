@@ -1,14 +1,3 @@
-.main aside[class*="media"] {
-  grid-column: var(--grid-breakout);
-  margin: calc(var(--vert-spacer) * 2) 0;
-}
-
-.main aside[class*="media"] p {
-  color: var(--bright-purple);
-  font-size: 0.9em;
-  margin-top: 0.5em;
-}
-
 .main img,
 .main video {
   width: 100%;

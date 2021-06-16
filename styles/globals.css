@@ -2,7 +2,7 @@
   font-size: 14pt;
   --max-paragraph-width: 60ch;
   --vert-spacer: 0.8rem;
-  --content-margin: 5vh;
+  --content-margin: 2.5vh;
 
   --bright-purple: #6500ff;
   --select-purple: rgba(102, 0, 255, 0.2);
@@ -10,9 +10,10 @@
   --nav-background-color: ghostwhite;
   --background-color: white;
 
-  --page-columns: 0.5fr min(var(--max-paragraph-width), 94%) 0.5fr;
+  --page-columns: 0.5fr min(var(--max-paragraph-width), 92%) 0.5fr;
   --grid-center: 2;
   --grid-breakout: 2;
+  --grid-bleed: 1 / -1;
 }
 
 @media (min-width: 699px) {
@@ -23,6 +24,7 @@
       0.5fr;
     --grid-center: 3;
     --grid-breakout: 2 / 5;
+    --grid-bleed: var(--grid-breakout);
   }
 }
 
@@ -30,7 +32,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: neue-haas-unica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, neue-haas-unica, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: neue-haas-unica, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
 }
 
@@ -42,8 +47,6 @@ main {
   font-size: 1rem;
   display: grid;
   grid-template-columns: var(--page-columns);
-  /* --grid-center: 3; */
-  --vert-spacer: 0.8rem;
   margin: var(--content-margin) 0;
 }
 
@@ -55,6 +58,7 @@ main h1 {
   margin-bottom: var(--vert-spacer);
   margin-left: -2px;
   line-height: 1.2;
+  font-weight: 500;
 }
 
 main p {
@@ -79,7 +83,38 @@ a:hover {
   text-decoration: underline;
 }
 
-img {
+img,
+video {
   width: 100%;
   display: block;
+}
+
+aside.media {
+  grid-column: var(--grid-breakout);
+  margin: calc(var(--vert-spacer) * 0.75) 0;
+}
+
+aside.media p {
+  color: var(--bright-purple);
+  font-size: 0.85em;
+  margin-top: 0.5em;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 0 4%;
+}
+
+aside.media + p {
+  margin-top: var(--vert-spacer);
+}
+
+.media.bleed {
+  grid-column: var(--grid-bleed);
+}
+
+/* */
+
+#woods-walk {
+  max-height: min(85vw, 45vh);
+  object-fit: cover;
+  object-position: 50% 55%;
 }

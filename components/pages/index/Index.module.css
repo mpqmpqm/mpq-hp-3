@@ -1,18 +1,3 @@
 .main > * {
   grid-column: var(--grid-center);
 }
-
-.main img {
-  width: 100%;
-  grid-column: 2 / 5;
-  /* max-height: 60vh; */
-  /* object-fit: cover; */
-  /* object-position: left; */
-  display: block;
-  margin: var(--vert-spacer) 0;
-  grid-row: span 5;
-}
-
-.main p {
-  /* grid-column: 3 / 5; */
-}
