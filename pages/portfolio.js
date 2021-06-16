@@ -10,6 +10,7 @@ const portfolio = ({ content, links }) => {
     <>
       <Head>
         <title>MPQ | Work</title>
+        <meta name="og:title" content="Work | MPQ" />
       </Head>
       <Layout>
         <main>

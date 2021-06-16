@@ -9,6 +9,7 @@ const resume = ({ content }) => {
     <>
       <Head>
         <title>MPQ | Résumé</title>
+        <meta name="og:title" content="Résumé | MPQ" />
       </Head>
       <Layout>
         <Resume>{markdownToReact({ content })}</Resume>

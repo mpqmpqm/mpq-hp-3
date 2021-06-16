@@ -9,6 +9,7 @@ const project = ({ content, title }) => {
     <>
       <Head>
         <title>MPQ | {title}</title>
+        <meta name="og:title" content={`${title} | MPQ`} />
       </Head>
       <Layout subPath={title}>
         <main className={styles.main}>{markdownToReact({ content })}</main>

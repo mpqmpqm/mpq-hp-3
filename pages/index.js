@@ -8,6 +8,7 @@ export default function Home({ content }) {
     <>
       <Head>
         <title>MPQ | Home</title>
+        <meta name="og:title" content="Home | MPQ" />
       </Head>
 
       <Layout>
