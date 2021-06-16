@@ -15,18 +15,16 @@ export const markdownToReact = ({ content }) =>
       createElement: React.createElement,
       Fragment: React.Fragment,
       components: {
-        "next-link": function ({
+        "next-link": ({
           node: {
             properties: { href },
             children,
           },
-        }) {
-          return (
-            <Link href={href}>
-              <a>{children[0].value}</a>
-            </Link>
-          )
-        },
+        }) => (
+          <Link href={href}>
+            <a>{children[0].value}</a>
+          </Link>
+        ),
       },
       passNode: true,
     })
