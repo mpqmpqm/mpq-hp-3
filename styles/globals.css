@@ -47,7 +47,7 @@ main {
   font-size: 1rem;
   display: grid;
   grid-template-columns: var(--page-columns);
-  margin: var(--content-margin) 0;
+  margin: var(--content-margin) 0 calc(var(--content-margin) * 4);
 }
 
 main > * {
@@ -119,7 +119,7 @@ aside.media + p {
 /* */
 
 #woods-walk {
-  max-height: min(85vw, 45vh);
+  max-height: min(85vw, 55vh);
   object-fit: cover;
   object-position: 50% 55%;
 }
