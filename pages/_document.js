@@ -1,4 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document"
+import { metatags } from "../seo/metatags.config"
+
+const { host, ogImage } = metatags
 
 class MyDocument extends Document {
   render() {
@@ -12,6 +15,7 @@ class MyDocument extends Document {
           />
           <meta name="description" content="MPQ's site" />
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="og:image" content={`${host}${ogImage}`} />
         </Head>
         <body>
           <Main />

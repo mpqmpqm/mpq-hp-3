@@ -1,18 +1,14 @@
 import Head from "next/head"
 import "../styles/globals.css"
+import { metatags } from "../seo/metatags.config"
+
+const { host } = metatags
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta
-          name="og:image"
-          content={`https://${pageProps.host}/static/woods-walk-meta.jpg`}
-        />
-        <meta
-          name="og:url"
-          content={`https://${pageProps.host}${pageProps.pathname}`}
-        />
+        <meta name="og:url" content={`${host}${pageProps.pathname}`} />
       </Head>
       <Component {...pageProps} />
     </>
@@ -21,7 +17,6 @@ function MyApp({ Component, pageProps }) {
 
 MyApp.getInitialProps = (appContext) => ({
   pageProps: {
-    host: appContext.ctx.req.headers.host,
     pathname: appContext.ctx.asPath,
   },
 })
