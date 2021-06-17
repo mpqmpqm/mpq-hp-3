@@ -1,7 +1,11 @@
 import Layout from "../components/Layout"
 import Link from "next/link"
 import styles from "../styles/pages/portfolio.module.css"
-import { fetchGithubMarkdown, fetchGithubLinks } from "../utils/fetchGithub"
+import {
+  fetchGithubMarkdown,
+  fetchGithubLinks,
+  fetchGithubOrder,
+} from "../utils/fetchGithub"
 import { markdownToReact } from "../utils/markdownToReact"
 import Head from "next/head"
 
@@ -41,13 +45,23 @@ export async function getStaticProps() {
     path: `Portfolio.md`,
   })
 
+  const links = await fetchGithubLinks({
+    repo: `resume`,
+    path: `portfolio`,
+    pathsOnly: false,
+  })
+
+  const { order } = await fetchGithubOrder({
+    repo: `resume`,
+    path: `z_order/portfolio.txt`,
+  })
+
   return {
     props: {
-      links: await fetchGithubLinks({
-        repo: `resume`,
-        path: `portfolio`,
-        pathsOnly: false,
-      }),
+      links: links.sort(
+        ({ filename: a }, { filename: b }) =>
+          order.indexOf(a) - order.indexOf(b)
+      ),
       content,
     },
   }
