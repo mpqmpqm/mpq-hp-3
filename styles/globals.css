@@ -119,7 +119,7 @@ aside.media + p {
 .media.tall img,
 .media.tall video {
   min-height: 50vw;
-  max-height: 85vh;
+  max-height: 90vh;
   object-fit: contain;
 }
 
