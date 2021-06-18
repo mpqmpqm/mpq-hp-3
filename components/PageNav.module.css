@@ -11,6 +11,15 @@
   z-index: 99;
 }
 
+.expanded li .anchor {
+  padding-bottom: 6vh;
+  transition: padding 0.2s;
+}
+
+/* .red li:first-child .anchor {
+  padding-bottom: 1.5vh;
+} */
+
 .nav ul {
   display: grid;
   background-color: var(--bright-purple);
@@ -35,6 +44,10 @@
     "left right";
 }
 
+.expanded .projectPage li[name="/portfolio"] .anchor {
+  padding-bottom: 1.5vh;
+}
+
 .projectPage li[name="/portfolio"] {
   grid-area: top;
 }
@@ -50,6 +63,7 @@
   font-weight: 500;
   padding: 1.25vh 2vh 1.5vh;
   display: block;
+  will-change: padding;
 }
 
 .nav .active {
