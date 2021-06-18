@@ -22,6 +22,20 @@ export const fetchGithubMarkdown = async ({ repo, path }) => {
   }
 }
 
+export const fetchGithubOrder = async ({ repo, path }) => {
+  const order = await octokit.request(
+    `GET /repos/mpqmpqm/${repo}/contents/${path}`,
+    {
+      owner: "mpqmpqm",
+      repo,
+      type: "private",
+    }
+  )
+  return {
+    order: Buffer.from(order.data.content, "base64").toString().split(`\n`),
+  }
+}
+
 export const fetchGithubLinks = async ({ repo, path, pathsOnly }) => {
   const fileNames = await octokit.request(
     `GET /repos/mpqmpqm/${repo}/contents/${path}`,
@@ -38,7 +52,8 @@ export const fetchGithubLinks = async ({ repo, path, pathsOnly }) => {
     }))
 
   const files = await Promise.all(
-    fileNames.data.map(async ({ path }) => ({
+    fileNames.data.map(async ({ name: filename, path }) => ({
+      filename,
       path: path.replace(`.md`, ``),
       file: await fetchGithubMarkdown({ repo, path }),
     }))
@@ -46,12 +61,14 @@ export const fetchGithubLinks = async ({ repo, path, pathsOnly }) => {
 
   const titles = files.map(
     ({
+      filename,
       path,
       file: {
         content,
         data: { title, tags },
       },
     }) => ({
+      filename,
       path,
       title,
       tags: tags || null,
