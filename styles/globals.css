@@ -116,6 +116,13 @@ aside.media + p {
   grid-column: var(--grid-bleed);
 }
 
+.media.tall img,
+.media.tall video {
+  min-height: 50vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
 /* */
 
 #woods-walk {
