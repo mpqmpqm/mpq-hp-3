@@ -132,7 +132,13 @@ aside.media + p {
 }
 @media print {
   a[href]:after {
-		content: ' (' attr(href) ')';
+    content: " (" attr(href) ")";
     color: black;
-	}
+  }
+  .online-only {
+    display: none;
+  }
+  header a[href]:after {
+    content: none;
+  }
 }
