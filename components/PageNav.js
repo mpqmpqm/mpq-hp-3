@@ -2,7 +2,7 @@ import Link from "next/link"
 import styles from "./PageNav.module.css"
 
 import { useRouter } from "next/router"
-import { useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
 import useSafariNav from "../hooks/useSafariNav"
 import PrintBox from "./dev/PrintBox"
 
@@ -47,15 +47,12 @@ const PageNav = ({ subPath }) => {
 
   const navRef = useRef(null)
 
-  const { nativeUIMinimized, debug } = useSafariNav(navRef)
+  useSafariNav(navRef)
 
   return (
     <>
       {/* <PrintBox value={debug} /> */}
-      <nav
-        className={`${styles.nav} ${nativeUIMinimized ? styles.expanded : ``}`}
-        ref={navRef}
-      >
+      <nav className={styles.nav} ref={navRef}>
         <ul className={isProjectPage ? styles.projectPage : null}>
           {routes.map(({ href, text }) => (
             <PageNavLink
