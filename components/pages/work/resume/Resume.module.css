@@ -6,9 +6,10 @@
 
 @media print {
   .container {
-    font-size: 10pt;
+    font-size: 10.5pt;
     display: block;
     margin: 7.5mm;
+    --vert-spacer: 0.75em;
   }
 }
 
@@ -21,6 +22,7 @@
   padding: 0 var(--padding-indent);
   margin-bottom: 0;
   margin-left: auto;
+  color: black;
 }
 
 .container h2 {
@@ -138,7 +140,7 @@
 }
 
 .container p:first-of-type a {
-  color: black;
+  /* color: black; */
   /* text-decoration: none; */
 }
 
@@ -152,6 +154,7 @@
 
 .container header {
   text-align: right;
+  color: var(--bright-purple);
   /* margin-bottom: var(--vert-spacer); */
 }
 
@@ -170,3 +173,42 @@
 .container p[class="dates"] {
   font-size: 0.95em;
 }
+
+.container h4 + p[class="dates"] + ul {
+  margin-top: var(--vert-spacer);
+}
+
+.container h4 + p[class="dates"] + ul li {
+  line-height: 1.3;
+  margin-bottom: calc(var(--vert-spacer) * 0.8);
+}
+
+.container li:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 700px) {
+  .container ul {
+    padding-inline-start: var(--padding-indent);
+  }
+  .container li::marker {
+    content: "–   ";
+    font-weight: 500;
+  }
+}
+
+.container section {
+  page-break-inside: avoid;
+}
+
+/* .container section[id="skills"] {
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "dev creative content"
+    "dev2 creative2 content2";
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.container section[id="skills"] h2 {
+  grid-area: title;
+} */
