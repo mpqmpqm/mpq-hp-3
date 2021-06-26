@@ -49,7 +49,7 @@ const DownloadButton = ({ fetchPath }) => {
         className={styles.button}
         disabled={fetching}
       >
-        Download
+        Download PDF
       </button>
       {fetching &&
         [
