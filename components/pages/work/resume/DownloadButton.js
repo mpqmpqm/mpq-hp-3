@@ -53,7 +53,12 @@ const DownloadButton = ({ fetchPath }) => {
       </button>
       {fetching &&
         [
-          <Spinner color="var(--bright-purple)" size="1em" reverse />,
+          <Spinner
+            color="var(--bright-purple)"
+            size="1em"
+            reverse
+            key="spinner"
+          />,
           fetching === 2 ? (
             <p key="still-working">Still working 😉</p>
           ) : (
