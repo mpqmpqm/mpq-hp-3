@@ -5,6 +5,7 @@
   --content-margin: 2.5vh;
 
   --bright-purple: #6500ff;
+  --bright-purple-block: hsl(260deg, 100%, 50%);
   --select-purple: rgba(102, 0, 255, 0.2);
 
   --nav-background-color: ghostwhite;
