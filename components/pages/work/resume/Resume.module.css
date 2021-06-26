@@ -11,6 +11,16 @@
     margin: 7.5mm;
     --vert-spacer: 0.75em;
   }
+  .container a[href]:after {
+    content: " (" attr(href) ")";
+    color: black;
+  }
+  .container *[class="online-only"] {
+    display: none;
+  }
+  .container header a[href]:after {
+    content: none;
+  }
 }
 
 .container > * {
