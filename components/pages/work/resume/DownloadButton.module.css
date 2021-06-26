@@ -1,0 +1,44 @@
+.button {
+  font-size: inherit;
+  display: block;
+  padding: 0.2em;
+  background: none;
+  border: none;
+  line-height: 1;
+  color: inherit;
+}
+
+.button:hover,
+.button:active {
+  text-decoration: underline;
+}
+
+.button:disabled {
+  color: #a5a5a5;
+}
+
+.container {
+  color: var(--bright-purple);
+  display: flex;
+  font-size: 0.95em;
+  margin: 0 0 var(--vert-spacer) auto;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0 var(--padding-indent);
+}
+.container p {
+  margin-top: 0 !important;
+  font-size: inherit;
+  padding: 0 0.25em;
+}
+
+.container p.error {
+  color: black;
+  font-size: 0.95em;
+}
+@media print {
+  .container {
+    display: none;
+  }
+}
