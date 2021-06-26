@@ -4,25 +4,6 @@
   --padding-indent: 0.5rem;
 }
 
-@media print {
-  .container {
-    font-size: 10.5pt;
-    display: block;
-    margin: 7.5mm;
-    --vert-spacer: 0.75em;
-  }
-  .container a[href]:after {
-    content: " (" attr(href) ")";
-    color: black;
-  }
-  .container *[class="online-only"] {
-    display: none;
-  }
-  .container header a[href]:after {
-    content: none;
-  }
-}
-
 .container > * {
   grid-column: var(--grid-center);
 }
@@ -206,6 +187,38 @@
   page-break-inside: avoid;
 }
 
+.container section li {
+  line-height: 1.3;
+  margin-bottom: calc(var(--vert-spacer) * 0.8);
+}
+
+.container section[id="skills"] li {
+  margin-bottom: 6px;
+}
+
+@media print {
+  .container {
+    font-size: 10.5pt;
+    display: block;
+    margin: 7.5mm;
+    --vert-spacer: 0.75em;
+  }
+
+  .container a[href]:after {
+    content: " (" attr(href) ")";
+    color: black;
+  }
+  .container *[class="online-only"] {
+    display: none;
+  }
+  .container header a[href]:after {
+    content: none;
+  }
+
+  .container section li {
+    margin-bottom: calc(var(--vert-spacer) * 0.5) !important;
+  }
+}
 /* .container section[id="skills"] {
   display: grid;
   grid-template-areas:
