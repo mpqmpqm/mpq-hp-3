@@ -1,11 +1,11 @@
 .button {
-  font-size: 0.95em;
+  font-size: inherit;
   display: block;
   padding: 0.2em;
   background: none;
   border: none;
-  color: var(--bright-purple);
   line-height: 1;
+  color: inherit;
 }
 
 .button:hover,
@@ -22,14 +22,20 @@
   }
 }
 .container {
+  color: var(--bright-purple);
   display: flex;
-  font-size: inherit;
+  font-size: 0.95em;
   margin: 0 0 auto auto;
   flex-direction: row-reverse;
   margin-bottom: var(--content-margin);
   align-items: center;
   gap: 0.25em;
   padding: 0 var(--padding-indent);
+}
+.container p {
+  margin: 0;
+  font-size: inherit;
+  padding: 0 0.25em;
 }
 @media (min-width: 700px) {
   .container {

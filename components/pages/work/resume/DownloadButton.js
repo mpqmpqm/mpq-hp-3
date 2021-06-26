@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./DownloadButton.module.css"
 import Spinner from "../../../Spinner"
 
 const DownloadButton = ({ fetchPath }) => {
   const [fetching, setFetching] = useState(false)
   const handleClick = async () => {
-    setFetching(true)
+    setFetching(1)
     try {
       const blob = await fetch(fetchPath, {
         responseType: "arraybuffer",
@@ -26,6 +26,14 @@ const DownloadButton = ({ fetchPath }) => {
     }
     setFetching(false)
   }
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (fetching) setFetching(2)
+    }, 2000)
+    return () => clearTimeout(timeout)
+  }, [fetching])
+
   return (
     <div className={styles.container}>
       <button
@@ -35,7 +43,16 @@ const DownloadButton = ({ fetchPath }) => {
       >
         Download
       </button>
-      {fetching && <Spinner color="var(--bright-purple)" size="1em" reverse />}
+      {fetching &&
+        [
+          <Spinner
+            color="var(--bright-purple)"
+            size="1em"
+            reverse
+            key="spinner"
+          />,
+          <p key="still-working">Still working 😉</p>,
+        ].slice(0, fetching)}
     </div>
   )
 }
