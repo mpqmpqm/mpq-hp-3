@@ -39,9 +39,17 @@
 
 .container h3 {
   font-size: 1.2em;
-  margin-top: calc(var(--vert-spacer) * 2);
+  margin-top: var(--vert-spacer);
   line-height: 1.15;
   font-weight: 500;
+}
+
+.container section[id="work"] h3 {
+  margin-top: calc(var(--vert-spacer) * 2);
+}
+
+.container section[id="work"] h3:first-of-type {
+  margin-top: var(--vert-spacer);
 }
 
 .container h4 {
@@ -95,8 +103,12 @@
 
 .container ul {
   padding-inline-start: 4ch;
-  margin-top: calc(var(--vert-spacer) * 0.25);
+  margin-top: var(--vert-spacer);
   padding-right: var(--padding-indent);
+}
+
+.container section[id="skills"] ul {
+  margin-top: 6px;
 }
 
 .container h2 + ul {
@@ -190,6 +202,10 @@
 .container section li {
   line-height: 1.3;
   margin-bottom: calc(var(--vert-spacer) * 0.8);
+}
+
+.container section[id="education"] li {
+  margin-bottom: 6px;
 }
 
 .container section[id="skills"] li {
