@@ -93,4 +93,7 @@
     font-weight: 300;
     padding: 0;
   }
+  .projectPage li[name="/portfolio"] .anchor {
+    padding: 0;
+  }
 }
