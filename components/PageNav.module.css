@@ -42,14 +42,16 @@
 .projectPage li[name="/portfolio"] .anchor {
   display: inline-block;
   padding-right: 0;
+  padding-bottom: 1.5vh;
 }
 
 .anchor {
   text-decoration: none;
   color: var(--bright-purple);
   font-weight: 500;
-  padding: 1.25vh 2vh 1.5vh;
+  padding: 1.25vh 2vh var(--nav-padding-bottom);
   display: block;
+  will-change: padding;
 }
 
 .nav .active {
