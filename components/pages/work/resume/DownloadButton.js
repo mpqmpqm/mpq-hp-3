@@ -4,8 +4,10 @@ import Spinner from "../../../Spinner"
 
 const DownloadButton = ({ fetchPath }) => {
   const [fetching, setFetching] = useState(false)
+  const [error, setError] = useState(null)
   const handleClick = async () => {
     setFetching(1)
+    setError(false)
     try {
       const blob = await fetch(fetchPath, {
         responseType: "arraybuffer",
@@ -20,9 +22,7 @@ const DownloadButton = ({ fetchPath }) => {
       link.click()
     } catch (e) {
       console.error(e)
-      alert(
-        `Something went wrong. Please try again, or use your browser's native print dialog.`
-      )
+      setError(e)
     }
     setFetching(false)
   }
@@ -31,8 +31,16 @@ const DownloadButton = ({ fetchPath }) => {
     const timeout = setTimeout(() => {
       if (fetching) setFetching(2)
     }, 2000)
-    return () => clearTimeout(timeout)
-  }, [fetching])
+    let timeout2
+    if (error)
+      setTimeout(() => {
+        setError(null)
+      }, 5000)
+    return () => {
+      clearTimeout(timeout)
+      clearTimeout(timeout2)
+    }
+  }, [fetching, error])
 
   return (
     <div className={styles.container}>
@@ -45,14 +53,15 @@ const DownloadButton = ({ fetchPath }) => {
       </button>
       {fetching &&
         [
-          <Spinner
-            color="var(--bright-purple)"
-            size="1em"
-            reverse
-            key="spinner"
-          />,
+          <Spinner color="var(--bright-purple)" size="1em" reverse />,
           <p key="still-working">Still working 😉</p>,
         ].slice(0, fetching)}
+      {error && (
+        <p key="error" className={styles.error}>
+          Something went wrong. Please try again, or try using your browser's
+          native print dialog.
+        </p>
+      )}
     </div>
   )
 }
