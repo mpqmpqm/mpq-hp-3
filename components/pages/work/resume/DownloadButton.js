@@ -29,7 +29,7 @@ const DownloadButton = ({ fetchPath }) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (fetching) setFetching(2)
+      if (fetching) setFetching(fetching + 1)
     }, 2000)
     let timeout2
     if (error)
@@ -54,7 +54,11 @@ const DownloadButton = ({ fetchPath }) => {
       {fetching &&
         [
           <Spinner color="var(--bright-purple)" size="1em" reverse />,
-          <p key="still-working">Still working 😉</p>,
+          fetching === 2 ? (
+            <p key="still-working">Still working 😉</p>
+          ) : (
+            <p key="still-working-2">Stiiill working ⏳</p>
+          ),
         ].slice(0, fetching)}
       {error && (
         <p key="error" className={styles.error}>
