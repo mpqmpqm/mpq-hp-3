@@ -11,6 +11,16 @@
     margin: 7.5mm;
     --vert-spacer: 0.75em;
   }
+  .container a[href]:after {
+    content: " (" attr(href) ")";
+    color: black;
+  }
+  .container *[class="online-only"] {
+    display: none !important;
+  }
+  .container header a[href]:after {
+    content: none;
+  }
 }
 
 .container > * {
@@ -176,6 +186,12 @@
 .container h4 + p[class="dates"] + ul li {
   line-height: 1.3;
   margin-bottom: calc(var(--vert-spacer) * 0.8);
+}
+
+@media print {
+  .container h4 + p[class="dates"] + ul li {
+    margin-bottom: calc(var(--vert-spacer) * 0.25);
+  }
 }
 
 .container li:last-child {
