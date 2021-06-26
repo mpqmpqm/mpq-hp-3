@@ -1,18 +1,39 @@
-.anchor {
+.button {
   font-size: 0.95em;
-  margin: 0 0 auto auto;
   display: block;
-  margin-bottom: var(--content-margin);
   padding: 0.2em;
+  background: none;
+  border: none;
+  color: var(--bright-purple);
+  line-height: 1;
 }
 
+.button:hover,
+.button:active {
+  text-decoration: underline;
+}
+
+.button:disabled {
+  color: #a5a5a5;
+}
 @media print {
-  .anchor {
+  .button {
     display: none;
   }
 }
+.container {
+  display: flex;
+  font-size: inherit;
+  margin: 0 0 auto auto;
+  flex-direction: row-reverse;
+  margin-bottom: var(--content-margin);
+  align-items: center;
+  gap: 0.25em;
+  padding: 0 var(--padding-indent);
+}
 @media (min-width: 700px) {
-  .anchor {
+  .container {
     margin: 0 auto auto 0;
+    flex-direction: row;
   }
 }
