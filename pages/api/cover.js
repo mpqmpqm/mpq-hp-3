@@ -6,7 +6,12 @@ const cover = async (req, res) => {
     path: `Cover.md`,
   })
 
-  res.send(content)
+  const copyableContent = content
+    .replaceAll("\n", " ")
+    .replaceAll("  ", "\n\n")
+    .replaceAll(/\\(.)/g, "$1")
+
+  res.send(copyableContent)
 }
 
 export default cover
