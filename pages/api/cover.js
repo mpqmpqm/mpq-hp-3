@@ -11,14 +11,7 @@ const cover = async (req, res) => {
     .replace(/  /g, "\n\n")
     .replace(/\\(.)/g, "$1")
 
-  res.send(`
-    <pre>${copyableContent}</pre>
-    <script>
-      window.addEventListener('DOMContentLoaded', (e) =>
-        navigator.clipboard.writeText(document.querySelector('pre').innerText)
-      )
-    </script>
-    `)
+  res.send(copyableContent)
 }
 
 export default cover
