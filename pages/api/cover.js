@@ -7,9 +7,9 @@ const cover = async (req, res) => {
   })
 
   const copyableContent = content
-  // .replaceAll("\n", " ")
-  // .replaceAll("  ", "\n\n")
-  // .replaceAll(/\\(.)/g, "$1")
+    .replace(/\n/g, " ")
+    .replace(/  /g, "\n\n")
+    .replace(/\\(.)/g, "$1")
 
   res.send(copyableContent)
 }
